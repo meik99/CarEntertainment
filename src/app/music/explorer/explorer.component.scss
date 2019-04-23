@@ -1,0 +1,34 @@
+$height: 395px;
+
+.mdl-list{
+  width: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  border: 1px solid red;
+
+  max-height: $height;
+  min-height: $height;
+  height: $height;
+
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  overflow: scroll;
+}
+
+.mdl-list__item{
+  margin: 0;
+  padding: 10px;
+  border-bottom: 1px solid gray;
+  text-transform: none;
+  max-height: unset;
+  min-height: 48px;
+  height: auto;
+}
+
+.active{
+  background-color: rgb(255,110,64);
+  color: white;
+}

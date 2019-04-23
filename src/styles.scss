@@ -1,0 +1,14 @@
+$height: 480px;
+
+body {
+  max-width: 798px;
+  min-width: 798px;
+  width: 798px;
+
+  max-height: $height;
+  min-height: $height;
+  height: $height;
+
+  border: 1px solid green;
+  overflow: hidden;
+}

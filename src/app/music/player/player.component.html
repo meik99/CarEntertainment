@@ -1,0 +1,51 @@
+<div class="mdl-grid size" style="margin-left: 10px">
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+    Playing: {{currentlyPlaying}}
+  </div>
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet" align="center">
+    {{(currentTime / 60) | floor | number:"1.0-0"}}:{{(currentTime % 60) | number:"2.0-0"}}
+  </div>
+
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+      (click)="previous()">
+      Prev
+    </button>
+  </div>
+
+  <div class="mdl-cell mdl-cell--6-col mdl-cell--4-col-tablet">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            *ngIf="playStatus === 'playing'"
+            (click)="togglePlayStatus()"
+            id="buttonPlay">
+      Pause
+    </button>
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+            *ngIf="playStatus !== 'playing'"
+            (click)="togglePlayStatus()"
+            id="buttonPlay">
+      Play
+    </button>
+  </div>
+  <div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+      (click)="next()">
+      Next
+    </button>
+  </div>
+
+
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+    Volume
+  </div>
+  <div class="mdl-cell mdl-cell--12-col mdl-cell--8-col-tablet">
+    <input class="mdl-slider mdl-js-slider"
+           type="range"
+           id="volumeSlider"
+           min="0"
+           [max]="maxVolume"
+           [(ngModel)]="currentVolume"
+           step="1"
+           style="width: 100%">
+  </div>
+</div>

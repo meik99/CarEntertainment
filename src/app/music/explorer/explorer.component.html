@@ -1,0 +1,12 @@
+<ul class="mdl-list ">
+<!--  <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect"-->
+<!--      *ngFor="let dirname of dirnames">-->
+<!--    {{dirname}}-->
+<!--  </li>-->
+  <li class="mdl-list__item mdl-button mdl-js-button mdl-js-ripple-effect"
+      [ngClass]="{'active': filename === currentlyPlaying}"
+      *ngFor="let filename of filenames"
+      (click)="play(filename)">
+    {{filename}}
+  </li>
+</ul>
