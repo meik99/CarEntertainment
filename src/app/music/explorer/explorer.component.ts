@@ -14,6 +14,8 @@ export class ExplorerComponent implements OnInit {
   ];
   currentlyPlaying: string = null;
 
+  private _dirLevel = 0;
+
   constructor(
     private ipcService: IpcService,
     private changeDetectionRed: ChangeDetectorRef
@@ -45,6 +47,26 @@ export class ExplorerComponent implements OnInit {
 
     for(let i = filenameIndex+1; i < this.filenames.length; i++){
       this.ipcService.send("music-queue", this.filenames[i]);
+    }
+  }
+
+  openDirectory(dirname: any) {
+    this.filenames = [];
+    this.dirnames = [];
+
+    if(dirname === ".."){
+      this._dirLevel--;
+    } else {
+      this._dirLevel++;
+    }
+
+    if(this._dirLevel > 0){
+      this.dirnames.push("..");
+    }
+    if(dirname === ".."){
+      this.ipcService.send("music-directory-pop");
+    }else{
+      this.ipcService.send("music-directory-push", dirname);
     }
   }
 }

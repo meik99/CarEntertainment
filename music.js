@@ -30,7 +30,7 @@ const music = (ipcMain) => {
     sendDirectoryContent(event);
   });
 
-  ipcMain.on("music-director-push", (event, args) => {
+  ipcMain.on("music-directory-push", (event, args) => {
     currentPath = path.join(currentPath, args);
     sendDirectoryContent(event);
   });
