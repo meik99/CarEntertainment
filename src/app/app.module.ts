@@ -9,6 +9,7 @@ import { ExplorerComponent } from './music/explorer/explorer.component';
 import { PlayerComponent } from './music/player/player.component';
 import {FormsModule} from '@angular/forms';
 import { FloorPipe } from './pipe/floor.pipe';
+import { CarComponent } from './car/car.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FloorPipe } from './pipe/floor.pipe';
     MusicComponent,
     ExplorerComponent,
     PlayerComponent,
-    FloorPipe
+    FloorPipe,
+    CarComponent
   ],
   imports: [
     BrowserModule,
